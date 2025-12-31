@@ -115,6 +115,8 @@ local function completeTasks(source)
         exports.ox_inventory:AddItem(source, 'money', activeTasks[source].earnings)
     end
 
+    activeTasks[source] = nil
+
     return true
 end
 
@@ -159,4 +161,5 @@ RegisterNetEvent('kevin-cityflyers:server:getMoreFlyers', function ()
 
     activeTasks[source].flyers = activeTasks[source].flyers + Config.flyerAmount
     activeTasks[source].handedOut = 0
+
 end)
